@@ -77,6 +77,18 @@ ENV HF_HOME="/app/backend/data/cache/embedding/models"
 #### Other models ##########################################################
 
 WORKDIR /app/backend
+COPY cache/embedding ./data/cache/embedding
+
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/README.md ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/8cfec92309f5626a223304af2423e332f6d31887
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/config.json ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/72b987fd805cfa2b58c4c8c952b274a11bfd5a00
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/config_sentence_transformers.json ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/fd1b291129c607e5d49799f87cb219b27f98acdf
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/model.safetensors ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/modules.json ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/952a9b81c0bfd99800fabf352f69c7ccd46c5e43
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/sentence_bert_config.json ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/59d594003bf59880a884c574bf88ef7555bb0202
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/special_tokens_map.json ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/e7b0375001f109a6b8873d756ad4f7bbb15fbaa5
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/tokenizer.json ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/cb202bfe2e3c98645018a6d12f182a434c9d3e02
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/tokenizer_config.json ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/c79f2b6a0cea6f4b564fed1938984bace9d30ff0
+RUN ln -s ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/8b3219a92973c328a8e22fadcfa821b5dc75636a/vocab.txt ./data/cache/embedding/models/models--sentence-transformers--all-MiniLM-L6-v2/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938
 
 ENV HOME /root
 # Create user and group if not root

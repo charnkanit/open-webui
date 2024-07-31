@@ -324,7 +324,7 @@ def get_model_path(model: str, update_model: bool = False):
     # Construct huggingface_hub kwargs with local_files_only to return the snapshot path
     cache_dir = os.getenv("SENTENCE_TRANSFORMERS_HOME")
 
-    local_files_only = not update_model
+    local_files_only = True #not update_model
 
     snapshot_kwargs = {
         "cache_dir": cache_dir,

@@ -283,7 +283,7 @@ def transcribe(
                 "device": whisper_device_type,
                 "compute_type": "int8",
                 "download_root": WHISPER_MODEL_DIR,
-                "local_files_only": not WHISPER_MODEL_AUTO_UPDATE,
+                "local_files_only": True #not WHISPER_MODEL_AUTO_UPDATE,
             }
 
             log.debug(f"whisper_kwargs: {whisper_kwargs}")
@@ -294,7 +294,7 @@ def transcribe(
                 log.warning(
                     "WhisperModel initialization failed, attempting download with local_files_only=False"
                 )
-                whisper_kwargs["local_files_only"] = False
+                whisper_kwargs["local_files_only"] = True
                 model = WhisperModel(**whisper_kwargs)
 
             segments, info = model.transcribe(file_path, beam_size=5)
